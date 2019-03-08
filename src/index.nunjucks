@@ -1,0 +1,21 @@
+{% set body_class = 'home' %}
+{% extends "_layout.nunjucks" %}
+
+{% block head %}
+  <title>{{title}}</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+{% endblock %}
+
+{% block content %}
+  <section class="grid">
+    {% for post in posts %}
+      <article class="grid-item">
+        {% for image in post.images %}
+          <picture><img src="assets/{{image}}.png" alt="" /></picture>
+        {% endfor %}
+        {{post.body | safe}}
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% import '_globals.nunjucks' as globals %}
+
+<footer class="footer">
+  <script src="{{bundled}}"></script>
+ Copyright or whatever
+</footer>

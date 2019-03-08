@@ -1,0 +1,20 @@
+{% set body_class = 'work' %}
+{% extends "_layout.nunjucks" %}
+
+{% block head %}
+  <title>{{title}}</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+{% endblock %}
+
+{% block content %}
+  <h2>{{ title | title }}</h2>
+  {% for post in posts %}
+  <article>
+    <h1>
+      <a href="/posts/{{post.slug}}">{{post.title}}</a>
+    </h1>
+    {{post.body | safe}}
+  </article>
+  {% endfor %}
+{% endblock %}

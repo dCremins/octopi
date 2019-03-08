@@ -1,0 +1,46 @@
+.banner {
+  margin: 0 auto;
+  position: relative;
+  width: 600px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  li {
+    background-size: cover;
+    position: absolute;
+    width: 141px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.illustration {
+      background-image: url('/assets/illustration.png');
+      height: 185px;
+      left: 67px;
+      top: 95px;
+
+      &:hover {
+        background-image: url('/assets/illustration-labeled.png');
+      }
+    }
+  }
+
+  a {
+    .hidden{
+      display: none;
+    }
+
+    &:hover .hidden {
+      display: block;
+    }
+  }
+}

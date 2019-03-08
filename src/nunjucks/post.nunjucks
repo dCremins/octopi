@@ -1,0 +1,20 @@
+{% set body_class = "work" %}
+{% extends "_layout.nunjucks" %}
+
+
+{% block content %}
+  {{ title }}
+  <section class="image_gallery">
+    {% for image in images %}
+      <div class="image">
+        <img src="assets/{{tag | replace(" ", "_")}}">{{image | replace("_", " ")}}</a>
+      </div>
+    {% endfor %}
+  </section>
+  {{ body | safe }}
+  <section>
+    {% for tag in tags %}
+      <a href="/{{tag | replace(" ", "_")}}">{{tag | replace("_", " ") | capitalize}}</a>
+    {% endfor %}
+  </section>
+{% endblock %}

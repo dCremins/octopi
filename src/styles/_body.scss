@@ -1,0 +1,9 @@
+.wrapper,
+.footer {
+  margin: 0 auto;
+  padding: 20px;
+
+  @include for-tablet-landscape-up {
+    width: 80%;
+  }
+}

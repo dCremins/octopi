@@ -1,0 +1,20 @@
+{% macro renderHeader(nav=['home'], body_class='home') %}
+<header class="header">
+  <nav class="banner">
+    <img src="assets/banner.png" alt="Header illustration of an octopus. The arms are navigational links to categories." />
+    <ul class="navigation">
+      {% for item in nav %}
+        {% if body_class === item %}
+          <li class='current {{item | replace("_", " ")}}'>
+        {% else %}
+          <li class='{{item | replace("_", " ")}}'>
+        {% endif %}
+          <a class='{{item | replace("_", " ")}}' href="/{{item | replace("_", " ")}}">
+            <span class="hidden">{{item}}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+{% endmacro %}

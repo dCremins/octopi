@@ -1,0 +1,12 @@
+{% macro image_card(title, content, images) %}
+<article class="image">
+  {% for image in images %}
+    <picture class="lozad" data-iesrc="assets/{{image.src}}.png" data-alt="{{image.alt}} Logo Icon">
+      <source srcset="assets/{{image.src}}.png" type="image/png">
+      <source srcset="assets/{{image.src}}.webp" type="image/webp">
+    </picture>
+  {% endfor %}
+  <h1>{{ title }}</h2>
+  <p>{{ content }}</p>
+</article>
+{% endmacro %}

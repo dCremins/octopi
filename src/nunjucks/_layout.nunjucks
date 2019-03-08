@@ -1,0 +1,30 @@
+{% import '_header.nunjucks' as header %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/{{main}}" />
+
+    {% block head %}
+      <title>{{title}}</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+    {% endblock %}
+
+  </head>
+  <body class="{{ body_class }}">
+    <main class="wrapper">
+      {{ header.renderHeader(navigation, body_class) }}
+
+      {% block content %}
+      {% endblock %}
+    </main>
+    {% include "_footer.nunjucks" %}
+    <!-- Common scripts placeholder. -->
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
